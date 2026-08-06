@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Interactive TadbirSekolah product map: current capabilities, September 2026 candidates, and wishlist ideas by module.">
+  <meta name="theme-color" content="#071a17">
+  <title>TadbirSekolah · Product map</title>
+  <link rel="stylesheet" href="roadmap.css">
+</head>
+<body>
+  <a class="skip-link" href="#roadmap">Skip to roadmap</a>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="TadbirSekolah product map home">
+      <svg class="brand-mark" viewBox="0 0 48 48" aria-hidden="true">
+        <path d="M24 3 43 13v22L24 45 5 35V13L24 3Z" fill="currentColor" opacity=".18"/>
+        <path d="m13 17 11-6 11 6-11 6-11-6Zm4 5.7 7 3.8 7-3.8V31l-7 3.8-7-3.8v-8.3Z" fill="currentColor"/>
+      </svg>
+      <span>TadbirSekolah</span>
+      <span class="brand-suffix">Product map</span>
+    </a>
+    <nav aria-label="Primary">
+      <a href="#roadmap">Roadmap</a>
+      <a href="#principles">Principles</a>
+      <a href="https://github.com/mmarifmz/TadbirSekolah">GitHub</a>
+      <button class="icon-button" id="themeToggle" type="button" aria-label="Switch colour theme" title="Switch colour theme">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 9 9c0-.5-.04-1-.12-1.47A7 7 0 0 1 12 3Z"/></svg>
+      </button>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span></span> Product direction · 6 August 2026</p>
+        <h1 id="hero-title">A clearer view of what schools can use <em>now</em>—and what comes next.</h1>
+        <p class="hero-lead">Explore TadbirSekolah by module and delivery horizon. Current features are grounded in shipped Laravel routes and workflows. Future items remain proposals until they pass their delivery gates.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#roadmap">Explore the roadmap</a>
+          <a class="button secondary" href="https://demo.tadbirsekolah.site">Open public demo <span aria-hidden="true">↗</span></a>
+        </div>
+        <p class="trust-note"><span aria-hidden="true">●</span> Tenant-aware · privacy-safe · teacher judgement preserved</p>
+      </div>
+      <div class="hero-visual" aria-label="Product modules across delivery horizons">
+        <div class="orbit orbit-one"></div>
+        <div class="orbit orbit-two"></div>
+        <div class="module-node node-core"><span>TS</span><small>Core</small></div>
+        <div class="module-node node-one"><span>TP</span><small>PBD</small></div>
+        <div class="module-node node-two"><span>R</span><small>e-RPH</small></div>
+        <div class="module-node node-three"><span>G</span><small>MySG</small></div>
+        <div class="module-node node-four"><span>K</span><small>Kokurikulum</small></div>
+        <div class="module-node node-five"><span>10k</span><small>Direktori</small></div>
+      </div>
+    </section>
+
+    <section class="metrics" aria-label="Roadmap summary">
+      <article><strong id="currentCount">0</strong><span>capabilities available</span></article>
+      <article><strong id="moduleCount">0</strong><span>product modules</span></article>
+      <article><strong id="nextCount">0</strong><span>September candidates</span></article>
+      <article><strong>10,230</strong><span>reference schools</span></article>
+    </section>
+
+    <section class="roadmap-section" id="roadmap" aria-labelledby="roadmap-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow"><span></span> Interactive roadmap</p>
+          <h2 id="roadmap-title">See the product by delivery horizon</h2>
+          <p>“Next month” means September 2026 candidates—not a guaranteed release date. Wishlist items have no committed schedule.</p>
+        </div>
+        <div class="view-toggle" role="group" aria-label="Roadmap view">
+          <button type="button" class="active" data-view="cards" aria-pressed="true">Cards</button>
+          <button type="button" data-view="matrix" aria-pressed="false">Module matrix</button>
+        </div>
+      </div>
+
+      <div class="filter-panel">
+        <div class="horizon-tabs" role="tablist" aria-label="Delivery horizon">
+          <button type="button" role="tab" class="active" data-horizon="all" aria-selected="true">All horizons</button>
+          <button type="button" role="tab" data-horizon="current" aria-selected="false"><span class="dot current"></span>Current</button>
+          <button type="button" role="tab" data-horizon="next" aria-selected="false"><span class="dot next"></span>September 2026</button>
+          <button type="button" role="tab" data-horizon="wishlist" aria-selected="false"><span class="dot wishlist"></span>Wishlist</button>
+        </div>
+        <label class="search-field">
+          <span class="sr-only">Search features</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
+          <input id="searchInput" type="search" placeholder="Search features or modules…" autocomplete="off">
+          <kbd>/</kbd>
+        </label>
+        <div class="module-filters" id="moduleFilters" aria-label="Filter by module"></div>
+      </div>
+
+      <div class="results-meta" aria-live="polite">
+        <p id="resultCount"></p>
+        <button id="clearFilters" type="button">Clear filters</button>
+      </div>
+      <div class="feature-grid" id="featureGrid"></div>
+      <div class="empty-state" id="emptyState" hidden>
+        <span aria-hidden="true">⌕</span>
+        <h3>No matching feature</h3>
+        <p>Try another module, horizon, or search phrase.</p>
+      </div>
+    </section>
+
+    <section class="principles" id="principles" aria-labelledby="principles-title">
+      <div class="section-heading compact">
+        <div>
+          <p class="eyebrow"><span></span> Product guardrails</p>
+          <h2 id="principles-title">How the roadmap earns trust</h2>
+        </div>
+      </div>
+      <div class="principle-grid">
+        <article><span>01</span><h3>Teacher judgement stays human</h3><p>PBD and e-RPH assistance can reduce preparation work, but never auto-decides a teacher's TP.</p></article>
+        <article><span>02</span><h3>Tenancy is enforced twice</h3><p>Laravel authorization and PostgreSQL FORCE RLS protect every school's boundary.</p></article>
+        <article><span>03</span><h3>Authority views stay aggregate</h3><p>JPN and PPD views avoid pupil identity and free-text evidence.</p></article>
+        <article><span>04</span><h3>Future means proposed</h3><p>Dated candidates and wishlist ideas remain visibly separate from shipped capabilities.</p></article>
+      </div>
+    </section>
+  </main>
+
+  <dialog id="featureDialog" aria-labelledby="dialogTitle">
+    <form method="dialog"><button class="dialog-close" aria-label="Close feature details">×</button></form>
+    <p class="dialog-module" id="dialogModule"></p>
+    <h2 id="dialogTitle"></h2>
+    <p id="dialogDescription"></p>
+    <div class="dialog-meta" id="dialogMeta"></div>
+    <a id="dialogSource" class="button primary" href="#">View evidence or plan <span aria-hidden="true">↗</span></a>
+  </dialog>
+
+  <footer>
+    <div><strong>TadbirSekolah</strong><p>Modular school administration for Malaysian schools.</p></div>
+    <div><p>Roadmap snapshot: 6 August 2026</p><p>Current status should be revalidated before operational decisions.</p></div>
+  </footer>
+  <script src="roadmap.js"></script>
+</body>
+</html>
