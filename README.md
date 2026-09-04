@@ -1,8 +1,18 @@
-# Public project catalogues
+# Public projects
 
-This repository hosts privacy-safe static project catalogues for GitHub Pages.
+This repository hosts a current, privacy-safe portfolio and static project
+catalogues for GitHub Pages.
 It contains no application source, credentials, environment configuration,
 tenant records, pupil information, or private operational evidence.
+
+## Portfolio
+
+The public project index is published at:
+
+<https://mmarifmz.github.io/>
+
+It lists public source repositories, public web experiences, and privacy-safe
+product catalogues. Private operational repositories are deliberately excluded.
 
 ## TadbirSekolah
 

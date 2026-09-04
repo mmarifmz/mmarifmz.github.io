@@ -3,11 +3,161 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="refresh" content="0; url=./TadbirSekolah/">
-  <title>mmarifmz · Public project catalogues</title>
-  <link rel="canonical" href="https://mmarifmz.github.io/TadbirSekolah/">
+  <meta name="description" content="Public projects by mmarifmz across Malaysian education, data engineering, analytics transformation, and enterprise technology.">
+  <meta name="theme-color" content="#071a17">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%23071a17'/%3E%3Cpath d='M16 17h12v12H16zm20 0h12v12H36zM16 37h12v12H16zm20 0h12v12H36z' fill='%2380e0a7'/%3E%3C/svg%3E">
+  <title>mmarifmz · Public projects</title>
+  <link rel="stylesheet" href="projects.css">
 </head>
 <body>
-  <p>Continue to the <a href="./TadbirSekolah/">TadbirSekolah product map</a>.</p>
+  <a class="skip-link" href="#projects">Skip to projects</a>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="mmarifmz public projects home">
+      <span class="brand-mark" aria-hidden="true">M</span>
+      <span>mmarifmz</span>
+      <span class="brand-suffix">Public projects</span>
+    </a>
+    <nav aria-label="Primary navigation">
+      <a href="#projects">Projects</a>
+      <a href="https://github.com/mmarifmz">GitHub <span aria-hidden="true">↗</span></a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="intro" aria-labelledby="page-title">
+      <div class="intro-copy">
+        <p class="eyebrow"><span></span> Portfolio · verified 4 September 2026</p>
+        <h1 id="page-title">Useful systems for schools, data teams, and transformation programmes.</h1>
+        <p class="intro-lead">A complete catalogue of the projects I currently share publicly—working demos, privacy-safe product maps, and source repositories.</p>
+      </div>
+      <div class="intro-stats" aria-label="Portfolio summary">
+        <div><strong>7</strong><span>public projects</span></div>
+        <div><strong>5</strong><span>web experiences</span></div>
+        <div><strong>3</strong><span>focus areas</span></div>
+      </div>
+    </section>
+
+    <section class="featured" aria-labelledby="featured-title">
+      <div class="section-heading">
+        <p class="eyebrow"><span></span> Featured work</p>
+        <h2 id="featured-title">Built around real operational decisions</h2>
+      </div>
+      <div class="featured-grid">
+        <article class="featured-card education">
+          <div class="featured-top">
+            <span class="project-icon">TS</span>
+            <span class="status"><i></i> Public product map</span>
+          </div>
+          <div>
+            <p class="project-type">Malaysian education</p>
+            <h3>TadbirSekolah</h3>
+            <p>Modular school administration spanning PBD, e-RPH, governance, operations, cocurricular work, reporting, and privacy-safe authority insight.</p>
+          </div>
+          <a class="button" href="./TadbirSekolah/">Explore the product map <span aria-hidden="true">→</span></a>
+        </article>
+
+        <article class="featured-card data">
+          <div class="featured-top">
+            <span class="project-icon">TL</span>
+            <span class="status"><i></i> Public showcase</span>
+          </div>
+          <div>
+            <p class="project-type">Analytics transformation</p>
+            <h3>TransformLens</h3>
+            <p>An open-source control tower for protecting reporting continuity through ERP and cloud-data modernisation programmes.</p>
+          </div>
+          <a class="button" href="https://mmarifmz.github.io/TransformLens/">Open the showcase <span aria-hidden="true">↗</span></a>
+        </article>
+      </div>
+    </section>
+
+    <section class="projects-section" id="projects" aria-labelledby="projects-title">
+      <div class="section-heading split">
+        <div>
+          <p class="eyebrow"><span></span> Complete catalogue</p>
+          <h2 id="projects-title">All public projects</h2>
+        </div>
+        <div class="filters" role="group" aria-label="Filter projects by focus area">
+          <button type="button" class="active" data-filter="all" aria-pressed="true">All <span>7</span></button>
+          <button type="button" data-filter="education" aria-pressed="false">Education <span>4</span></button>
+          <button type="button" data-filter="data" aria-pressed="false">Data &amp; analytics <span>2</span></button>
+          <button type="button" data-filter="enterprise" aria-pressed="false">Enterprise <span>1</span></button>
+        </div>
+      </div>
+
+      <div class="project-grid" id="projectGrid">
+        <article class="project-card" data-category="education">
+          <div class="card-heading"><span class="project-icon">TS</span><span class="availability catalogue">Product map</span></div>
+          <p class="project-type">Education platform</p>
+          <h3>TadbirSekolah</h3>
+          <p>Tenant-aware school administration with teacher-owned assessment, governed workflows, and aggregate-only authority views.</p>
+          <ul class="tags" aria-label="Technologies and topics"><li>Laravel</li><li>PostgreSQL</li><li>PBD</li></ul>
+          <div class="card-actions"><a href="./TadbirSekolah/">Product map <span aria-hidden="true">→</span></a></div>
+        </article>
+
+        <article class="project-card" data-category="data">
+          <div class="card-heading"><span class="project-icon">LH</span><span class="availability live">Live architecture site</span></div>
+          <p class="project-type">Data engineering</p>
+          <h3>Enterprise Iceberg Lakehouse Demo</h3>
+          <p>A disposable enterprise lakehouse demonstration using Airflow, Spark, Iceberg, MinIO, Trino, Kubernetes, and AdventureWorks.</p>
+          <ul class="tags" aria-label="Technologies and topics"><li>Airflow</li><li>Iceberg</li><li>Kubernetes</li></ul>
+          <div class="card-actions"><a href="https://mmarifmz.github.io/enterprise-iceberg-lakehouse-demo/">Architecture site <span aria-hidden="true">↗</span></a><a class="secondary-link" href="https://github.com/mmarifmz/enterprise-iceberg-lakehouse-demo">Source</a></div>
+        </article>
+
+        <article class="project-card" data-category="data">
+          <div class="card-heading"><span class="project-icon">TL</span><span class="availability live">Live showcase</span></div>
+          <p class="project-type">Analytics transformation</p>
+          <h3>TransformLens</h3>
+          <p>A transparent programme control tower for analytics assets, migration readiness, dependencies, cutover evidence, and governance.</p>
+          <ul class="tags" aria-label="Technologies and topics"><li>Next.js</li><li>TypeScript</li><li>SQLite</li></ul>
+          <div class="card-actions"><a href="https://mmarifmz.github.io/TransformLens/">Showcase <span aria-hidden="true">↗</span></a><a class="secondary-link" href="https://github.com/mmarifmz/TransformLens">Source</a></div>
+        </article>
+
+        <article class="project-card" data-category="education">
+          <div class="card-heading"><span class="project-icon">PI</span><span class="availability live">Live catalogue</span></div>
+          <p class="project-type">School finance</p>
+          <h3>Portal Pengurusan Sumbangan PIBG</h3>
+          <p>Family-level contribution management with parent access, class monitoring, online payments, receipts, reporting, and audit history.</p>
+          <ul class="tags" aria-label="Technologies and topics"><li>Laravel</li><li>Payments</li><li>Audit</li></ul>
+          <div class="card-actions"><a href="https://mmarifmz.github.io/portal_pengurusan_yuran_pibg/">Feature catalogue <span aria-hidden="true">↗</span></a><a class="secondary-link" href="https://github.com/mmarifmz/portal_pengurusan_yuran_pibg">Source</a></div>
+        </article>
+
+        <article class="project-card" data-category="enterprise">
+          <div class="card-heading"><span class="project-icon">SAP</span><span class="availability source">Public source</span></div>
+          <p class="project-type">Enterprise AI learning</p>
+          <h3>BTP GenAI for S/4HANA</h3>
+          <p>Hands-on SAP BTP exercises covering Fiori generation, AI-assisted message classification, FAQ embeddings, and service-order integration.</p>
+          <ul class="tags" aria-label="Technologies and topics"><li>SAP BTP</li><li>CAP</li><li>GenAI</li></ul>
+          <div class="card-actions"><a href="https://github.com/mmarifmz/BTPGenAI4S4_STUNDENTH53">View source <span aria-hidden="true">↗</span></a></div>
+        </article>
+
+        <article class="project-card" data-category="education">
+          <div class="card-heading"><span class="project-icon">CP</span><span class="availability source">Public source</span></div>
+          <p class="project-type">School operations</p>
+          <h3>Campayment SSP 2025</h3>
+          <p>A Laravel application repository for managing a school camp payment workflow.</p>
+          <ul class="tags" aria-label="Technologies and topics"><li>Laravel</li><li>PHP</li><li>School</li></ul>
+          <div class="card-actions"><a href="https://github.com/mmarifmz/campayment_ssp_2025">View source <span aria-hidden="true">↗</span></a></div>
+        </article>
+
+        <article class="project-card" data-category="education">
+          <div class="card-heading"><span class="project-icon">×</span><span class="availability live">Play online</span></div>
+          <p class="project-type">Learning game</p>
+          <h3>Sifir Duel</h3>
+          <p>A lightweight two-player multiplication game for fast, competitive mental-arithmetic practice at school or home.</p>
+          <ul class="tags" aria-label="Technologies and topics"><li>JavaScript</li><li>Maths</li><li>Game</li></ul>
+          <div class="card-actions"><a href="https://mmarifmz.github.io/sifir_duel/">Play now <span aria-hidden="true">↗</span></a><a class="secondary-link" href="https://github.com/mmarifmz/sifir_duel">Source</a></div>
+        </article>
+      </div>
+      <p class="privacy-note"><span aria-hidden="true">●</span> Only public code and privacy-safe project catalogues are listed here. Private operational repositories and data stay private.</p>
+    </section>
+  </main>
+
+  <footer>
+    <div><strong>mmarifmz</strong><p>Building practical software across education and data.</p></div>
+    <div><p>Project availability verified 4 September 2026.</p><a href="https://github.com/mmarifmz">github.com/mmarifmz <span aria-hidden="true">↗</span></a></div>
+  </footer>
+
+  <script src="projects.js"></script>
 </body>
 </html>
