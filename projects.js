@@ -1,18 +1,38 @@
+const projects = [
+  {name:"Lakehouse Rescue Lab",repo:"lakehouse-rescue-lab",category:"data",icon:"LH",status:"Live interactive demo",statusClass:"live",case:"A duplicated order can inflate a Finance report unless raw events are retained, trusted records are deduplicated, and exceptions remain visible.",objective:"Show an inspectable Databricks-style delivery pattern using synthetic incidents, PySpark, SQL, governance and deployment artefacts.",benefit:"A reusable way to explain data quality, replay, quarantine and access controls to both engineers and decision-makers.",tags:["PySpark","Databricks","Data quality"],live:"https://mmarifmz.github.io/lakehouse-rescue-lab/"},
+  {name:"VSM to Routing Preparation Tool",repo:"vsm-to-routing-preparation-tool",category:"enterprise",icon:"VSM",status:"Public source",statusClass:"source",case:"Manufacturing analysts often translate Visio value-stream maps and Excel extracts into consistent routing-review packs.",objective:"Prepare reviewable Change Rule and Material Selection drafts without approving decisions or writing back to SAP.",benefit:"Demonstrates gated desktop workflows, traceable source confirmation and human review for high-impact automation.",tags:["Python","Visio","Excel"]},
+  {name:"Portal Pengurusan Sumbangan PIBG",repo:"portal_pengurusan_yuran_pibg",category:"education",icon:"PI",status:"Live feature catalogue",statusClass:"live",case:"School contributions are family-level, may be paid in instalments, and need clear access, receipts and audit history.",objective:"Map a Laravel workflow for parent access, payment collection, class monitoring, communication and finance reporting.",benefit:"A privacy-aware reference for role-based school-payment workflows, queue-backed notifications and operational audit trails.",tags:["Laravel","Payments","Audit"],live:"https://mmarifmz.github.io/portal_pengurusan_yuran_pibg/"},
+  {name:"Keluarga Kiai Abdul Halim",repo:"keluarga-kiai-abdul-halim",category:"community",icon:"KK",status:"Live community site",statusClass:"live",case:"A family history and annual gathering need a mobile-friendly, respectful way to navigate an evolving family tree and programme.",objective:"Create a responsive genealogy and event site with shareable routes, calendar files and approved contact pathways.",benefit:"Offers a modern React example for community information architecture, responsive visualisation and event-friendly web details.",tags:["React","TypeScript","Vite"],live:"https://keluarga-kiai-abdul-halim.arif.my/"},
+  {name:"mmarifmz.github.io",repo:"mmarifmz.github.io",category:"community",icon:"M",status:"Live catalogue",statusClass:"live",case:"A public profile needs to share useful work without exposing private operational repositories or sensitive data.",objective:"Maintain a small, static, privacy-safe catalogue with source and live-experience links.",benefit:"A simple pattern for framing open work honestly: clear scope, public evidence, and no accidental disclosure.",tags:["HTML","CSS","GitHub Pages"],live:"https://mmarifmz.github.io/"},
+  {name:"Enterprise Iceberg Lakehouse Demo",repo:"enterprise-iceberg-lakehouse-demo",category:"data",icon:"ICE",status:"Live architecture site",statusClass:"live",case:"A team needs a reproducible way to demonstrate an open lakehouse stack locally or in a short-lived client environment.",objective:"Assemble Airflow, Spark, Iceberg, MinIO, Trino and Kubernetes around a disposable AdventureWorks example.",benefit:"Gives developers an inspectable multi-tool reference for orchestration, table formats, query access and ephemeral demo operations.",tags:["Iceberg","Airflow","Kubernetes"],live:"https://mmarifmz.github.io/enterprise-iceberg-lakehouse-demo/"},
+  {name:"TransformLens",repo:"TransformLens",category:"data",icon:"TL",status:"Live product showcase",statusClass:"live",case:"ERP and cloud-data migrations can disrupt reporting when asset dependencies, readiness and cutover evidence are fragmented.",objective:"Provide a synthetic, open-source control-tower foundation for assets, readiness, dependencies, cutover evidence and governance.",benefit:"Shows how to make transformation risk visible with a testable Next.js workflow, while keeping demo data and platform claims explicit.",tags:["Next.js","TypeScript","SQLite"],live:"https://mmarifmz.github.io/TransformLens/"},
+  {name:"TaksirUtama",repo:"TaksirUtama",category:"education",icon:"TU",status:"Archived public fork",statusClass:"archived",case:"Multiple schools require isolated assessment workflows for UPSA, UASA and PBD, with careful handling of pupil information.",objective:"Preserve an archived multi-school Next.js foundation that documents tenant isolation, workbook workflows and safety controls.",benefit:"Useful as a cautionary reference for designing multi-tenant education systems with testing, encryption and privacy boundaries.",tags:["Next.js","Multi-tenant","PBD"],fork:true},
+  {name:"BTP GenAI for S/4HANA",repo:"BTPGenAI4S4_STUNDENTH53",category:"enterprise",icon:"SAP",status:"Public learning source",statusClass:"source",case:"SAP developers learning cloud extension patterns need a safe place to explore CAP project structure and AI-oriented integration ideas.",objective:"Keep hands-on exercises for SAP BTP, Build Code, Joule, GenAI Hub, HANA Cloud Vector Engine and S/4HANA integration together.",benefit:"A starting point for developers who want to experiment with enterprise extension concepts before applying them in a governed environment.",tags:["SAP BTP","CAP","GenAI"]},
+  {name:"Camp Payment SSP 2025",repo:"campayment_ssp_2025",category:"education",icon:"CP",status:"Early public source",statusClass:"source",case:"School activities often need a small, accountable payment workflow rather than informal lists and manual follow-up.",objective:"Retain an early Laravel repository for exploring a school-camp payment flow.",benefit:"A transparent starter example: developers can see the framework baseline and extend it with their own approved requirements and safeguards.",tags:["Laravel","PHP","School"]},
+  {name:"Sifir Duel",repo:"sifir_duel",category:"education",icon:"×",status:"Live browser game",statusClass:"live",case:"Mental-arithmetic practice is more engaging when children can play quick, friendly rounds together.",objective:"Offer a lightweight two-player multiplication game that works in a browser without extra installation.",benefit:"A compact example of how plain JavaScript can turn a classroom learning goal into an accessible, shareable game.",tags:["JavaScript","Maths","Game"],live:"https://mmarifmz.github.io/sifir_duel/"},
+  {name:"batch.scripts",repo:"batch.scripts",category:"enterprise",icon:"BAT",status:"Public fork",statusClass:"fork",case:"Windows automation often starts with small, reusable command-line helpers and examples.",objective:"Keep a public fork of npocmaka's batch-script utilities and examples available in the account history.",benefit:"Credits and preserves an upstream utility collection for developers who maintain legacy Windows automation.",tags:["Batch","Windows","Utilities"],fork:true}
+];
+
+const grid = document.querySelector("#projectGrid");
+const escapeHtml = (value) => value.replace(/[&<>"]/g, (character) => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"})[character]);
+const projectMarkup = (project) => {
+  const source = `https://github.com/mmarifmz/${project.repo}`;
+  const tags = project.tags.map((tag) => `<li>${escapeHtml(tag)}</li>`).join("");
+  const live = project.live ? `<a href="${project.live}">Open live experience <span aria-hidden="true">↗</span></a>` : "";
+  const detail = project.fork ? `${project.status} · upstream credit retained` : project.status;
+  return `<article class="project-card" data-category="${project.category}">
+    <div class="card-heading"><span class="project-icon">${project.icon}</span><span class="availability ${project.statusClass}">${detail}</span></div>
+    <h3>${escapeHtml(project.name)}</h3>
+    <dl class="case-study"><div><dt>Case study</dt><dd>${escapeHtml(project.case)}</dd></div><div><dt>Objective</dt><dd>${escapeHtml(project.objective)}</dd></div><div><dt>Developer benefit</dt><dd>${escapeHtml(project.benefit)}</dd></div></dl>
+    <ul class="tags" aria-label="Technologies and topics">${tags}</ul>
+    <div class="card-actions">${live}<a class="secondary-link" href="${source}">Source <span aria-hidden="true">↗</span></a></div>
+  </article>`;
+};
+grid.innerHTML = projects.map(projectMarkup).join("");
 const filterButtons = document.querySelectorAll("[data-filter]");
 const projectCards = document.querySelectorAll("[data-category]");
-
-filterButtons.forEach((button) => {
-  button.addEventListener("click", () => {
-    const filter = button.dataset.filter;
-
-    filterButtons.forEach((item) => {
-      const active = item === button;
-      item.classList.toggle("active", active);
-      item.setAttribute("aria-pressed", String(active));
-    });
-
-    projectCards.forEach((card) => {
-      card.hidden = filter !== "all" && card.dataset.category !== filter;
-    });
-  });
-});
+filterButtons.forEach((button) => button.addEventListener("click", () => {
+  const filter = button.dataset.filter;
+  filterButtons.forEach((item) => { const active = item === button; item.classList.toggle("active", active); item.setAttribute("aria-pressed", String(active)); });
+  projectCards.forEach((card) => { card.hidden = filter !== "all" && card.dataset.category !== filter; });
+}));
