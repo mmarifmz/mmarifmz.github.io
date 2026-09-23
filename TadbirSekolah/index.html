@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Interactive TadbirSekolah product map: current capabilities, September 2026 candidates, and wishlist ideas by module.">
+  <meta name="description" content="TadbirSekolah interactive product map: practical teacher, school-leadership, and public-trust workflows with clearly marked delivery status.">
   <meta name="theme-color" content="#071a17">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%23071a17'/%3E%3Cpath d='m13 23 19-11 19 11-19 11-19-11Zm7 10 12 7 12-7v14l-12 7-12-7V33Z' fill='%2380e0a7'/%3E%3C/svg%3E">
   <title>TadbirSekolah · Product map</title>
-  <link rel="stylesheet" href="roadmap.css">
+  <link rel="stylesheet" href="roadmap.css?v=a3aea8a">
 </head>
 <body>
   <a class="skip-link" href="#roadmap">Skip to roadmap</a>
@@ -34,12 +34,12 @@
   <main id="top">
     <section class="hero" aria-labelledby="hero-title">
       <div class="hero-copy">
-        <p class="eyebrow"><span></span> Product direction · 6 August 2026</p>
-        <h1 id="hero-title">A clearer view of what schools can use <em>now</em> ✨ and what comes next.</h1>
-        <p class="hero-lead">Explore TadbirSekolah by module and delivery horizon. Current features are grounded in shipped Laravel routes and workflows. Future items remain proposals until they pass their delivery gates.</p>
+        <p class="eyebrow"><span></span> Product map · 23 September 2026</p>
+        <h1 id="hero-title">One connected workspace for the work that makes a school <em>move forward.</em></h1>
+        <p class="hero-lead">From curriculum and lesson planning to assessment follow-up, school operations, and public trust—TadbirSekolah keeps the next useful action close to the people doing the work.</p>
         <div class="hero-actions">
-          <a class="button primary" href="#roadmap">Explore the roadmap</a>
-          <a class="button secondary" href="https://demo.tadbirsekolah.site">Open public demo <span aria-hidden="true">↗</span></a>
+          <a class="button primary" href="#stories">See the outcomes</a>
+          <a class="button secondary" href="#roadmap">Explore the product map</a>
         </div>
         <p class="trust-note"><span aria-hidden="true">●</span> Tenant-aware · privacy-safe · teacher judgement preserved</p>
       </div>
@@ -55,10 +55,31 @@
       </div>
     </section>
 
+    <section class="stories" id="stories" aria-labelledby="stories-title">
+      <div class="section-heading compact">
+        <div>
+          <p class="eyebrow"><span></span> A sales-ready product story</p>
+          <h2 id="stories-title">Three outcomes a school team can see.</h2>
+        </div>
+        <p>Use these as a concise product walkthrough, then open the full interactive map for the supporting capability view.</p>
+      </div>
+      <div class="story-grid">
+        <a class="story-card" href="?module=e-RPH&horizon=current#roadmap">
+          <span>01 · TEACHERS</span><h3>Plan with curriculum context, then teach with confidence.</h3><p>Connect DSKP, RPT, timetable and RPH work without asking teachers to reconstruct the same context in separate tools.</p><strong>Explore curriculum &amp; e-RPH →</strong>
+        </a>
+        <a class="story-card" href="?module=Academic%20%26%20PBD&horizon=current#roadmap">
+          <span>02 · SCHOOL LEADERS</span><h3>Turn classroom evidence into a clear, owned next step.</h3><p>Capture assessment context, spot patterns and retain accountable intervention follow-up—while teacher judgement stays central.</p><strong>Explore assessment &amp; follow-up →</strong>
+        </a>
+        <a class="story-card" href="?module=Trust%20%26%20Infrastructure&horizon=current#roadmap">
+          <span>03 · COMMUNITY TRUST</span><h3>Share useful information without exposing private school records.</h3><p>Tenant boundaries, encrypted PII, controlled public publishing and aggregate authority views make trust part of the product.</p><strong>Explore trust &amp; governance →</strong>
+        </a>
+      </div>
+    </section>
+
     <section class="metrics" aria-label="Roadmap summary">
       <article><strong id="currentCount">0</strong><span>capabilities available</span></article>
       <article><strong id="moduleCount">0</strong><span>product modules</span></article>
-      <article><strong id="nextCount">0</strong><span>September candidates</span></article>
+      <article><strong id="nextCount">0</strong><span>gated / pilot items</span></article>
       <article><strong>10,230</strong><span>reference schools</span></article>
     </section>
 
@@ -67,7 +88,7 @@
         <div>
           <p class="eyebrow"><span></span> Interactive roadmap</p>
           <h2 id="roadmap-title">See the product by delivery horizon</h2>
-          <p>“Next month” means September 2026 candidates 📅 not a guaranteed release date. Wishlist items have no committed schedule.</p>
+          <p>Available capabilities, pilot candidates, gated delivery work, and wishlist ideas remain visibly separated. This is a product conversation—not a promised release calendar.</p>
         </div>
         <div class="view-toggle" role="group" aria-label="Roadmap view">
           <button type="button" class="active" data-view="cards" aria-pressed="true">Cards</button>
@@ -79,7 +100,7 @@
         <div class="horizon-tabs" role="tablist" aria-label="Delivery horizon">
           <button type="button" role="tab" class="active" data-horizon="all" aria-selected="true">All horizons</button>
           <button type="button" role="tab" data-horizon="current" aria-selected="false"><span class="dot current"></span>Current</button>
-          <button type="button" role="tab" data-horizon="next" aria-selected="false"><span class="dot next"></span>September 2026</button>
+          <button type="button" role="tab" data-horizon="next" aria-selected="false"><span class="dot next"></span>Gated / pilot</button>
           <button type="button" role="tab" data-horizon="wishlist" aria-selected="false"><span class="dot wishlist"></span>Wishlist</button>
         </div>
         <label class="search-field">
@@ -125,13 +146,13 @@
     <h2 id="dialogTitle"></h2>
     <p id="dialogDescription"></p>
     <div class="dialog-meta" id="dialogMeta"></div>
-    <a id="dialogSource" class="button primary" href="#">View evidence or plan <span aria-hidden="true">↗</span></a>
+    <p class="dialog-note" id="dialogNote">Capability status is summarised for an external product conversation; implementation evidence is available in a guided walkthrough.</p>
   </dialog>
 
   <footer>
     <div><strong>TadbirSekolah</strong><p>Modular school administration for Malaysian schools.</p></div>
-    <div><p>Roadmap snapshot: 6 August 2026</p><p>Current status should be revalidated before operational decisions.</p></div>
+    <div><p>Product-map snapshot: 23 September 2026</p><p>Capability state is intentionally separated from pilot and delivery gates.</p></div>
   </footer>
-  <script src="roadmap.js"></script>
+  <script src="roadmap.js?v=a3aea8a"></script>
 </body>
 </html>

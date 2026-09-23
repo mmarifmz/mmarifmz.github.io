@@ -1,5 +1,3 @@
-const repo = "https://github.com/mmarifmz/TadbirSekolah/blob/main/";
-
 const modules = {
   "Academic & PBD": { icon: "TP", colour: "#80e0a7" },
   "e-RPH": { icon: "R", colour: "#65c7e8" },
@@ -27,6 +25,10 @@ const features = [
   { title: "Review, return, and escalation", module: "e-RPH", horizon: "current", description: "Reviewer assignments, bulk review, returns, escalation, notifications, and administrator digest support accountable approval.", source: "docs/erph/PHASE-15-REVIEWER-WORKFLOW.md", evidence: "Implemented" },
   { title: "e-RPH PDF and materials", module: "e-RPH", horizon: "current", description: "Authorized PDF downloads, private teaching materials, retention controls, and DATA DEMO marking protect operational records.", source: "docs/erph/PHASE-30-RPH-PDF-DOWNLOAD.md", evidence: "Implemented" },
   { title: "Curriculum delivery health", module: "e-RPH", horizon: "current", description: "Progress projections, incremental delivery facts, queue probes, failure records, and health dashboards support measured operations.", source: "docs/erph/PHASE-29-SCALE-AND-OPERATIONS.md", evidence: "Verified locally" },
+  { title: "Editable DSKP and RPT workspace", module: "e-RPH", horizon: "current", description: "Administrators and delegated teachers can work with controlled DSKP editions, RPT timelines, SK/SP coverage, draft and active states, and conflict-safe saves in one curriculum workspace.", evidence: "Available in product" },
+  { title: "Assessment-to-action continuity", module: "Academic & PBD", horizon: "current", description: "Capture PBD evidence in context, see the pupil learning story, and retain an accountable intervention next step with owner, due date, lifecycle and protected notes.", evidence: "Available in product · local verification" },
+  { title: "Shareable school directory map", module: "Public Directory", horizon: "current", description: "Category-led map exploration, focused views and canonical school links help people discover public reference-school information with provenance retained.", evidence: "Available in product" },
+  { title: "Public solution journeys", module: "Platform & Demo", horizon: "current", description: "Dedicated public journeys for ERP Sekolah, PIBG, e-RPH and timetable planning make it easier to start the right product conversation.", evidence: "Available in product" },
 
   { title: "MySG governance workspace", module: "MySG Governance", horizon: "current", description: "A role-aware command centre connects committees, compliance, actions, meetings, risks, evidence, and calendar events.", source: "docs/MYSG-DAY-3.md", evidence: "Implemented" },
   { title: "Strategic plans and reviews", module: "MySG Governance", horizon: "current", description: "Schools define objectives, indicators, owners, improvement plans, reviews, and controlled workflow states.", source: "laravel/routes/web.php", evidence: "Implemented" },
@@ -56,6 +58,8 @@ const features = [
   { title: "Directory location review tranche", module: "Public Directory", horizon: "next", description: "Expand reviewed coordinates in bounded batches, retaining source, confidence, human review, and safe activation controls.", source: "laravel/docs/education-directory.md", evidence: "Candidate" },
   { title: "Governance pilot feedback pass", module: "MySG Governance", horizon: "next", description: "Use structured school feedback to refine planning, approvals, insights, and guided tours without weakening role boundaries.", source: "docs/MYSG-DAY-3.md", evidence: "Candidate" },
   { title: "Operational evidence pack", module: "Trust & Infrastructure", horizon: "next", description: "Record deployed revision, TLS/RLS proof, queue and scheduler logs, backup restore drill, and rollback rehearsal for the pilot candidate.", source: "docs/erph/PHASE-31-STAGING-HANDOFF.md", evidence: "Required gate" },
+  { title: "School digital-display pilot", module: "Platform & Demo", horizon: "next", description: "A read-only 16:9 school information board can present timetable, announcements and other privacy-safe operational signals; physical display and cloud APK acceptance remain pilot gates.", evidence: "Pilot candidate" },
+  { title: "e-RPH calendar and editor revamp", module: "e-RPH", horizon: "next", description: "A redesigned calendar and focused editor flow is under review. It remains gated until the open review feedback is resolved and the release checks are complete.", evidence: "Under review" },
 
   { title: "Live sports day dashboard", module: "Sukan & Kokurikulum", horizon: "wishlist", description: "Publish safe, versioned house standings, medals, recent results, event detail, and records from confirmed results only.", source: "docs/sports/ANNUAL-SPORTS-MEET-DELIVERY-PLAN.md", evidence: "Idea · no date" },
   { title: "Parent progress digest", module: "Reporting & Insight", horizon: "wishlist", description: "An opt-in, privacy-reviewed summary of published school-approved progress and upcoming actions for guardians.", source: "README.md", evidence: "Idea · no date" },
@@ -67,7 +71,7 @@ const features = [
   { title: "School request voting", module: "Platform & Demo", horizon: "wishlist", description: "A transparent, non-PII request board where pilot schools can rank roadmap needs and see decision status.", source: "README.md", evidence: "Idea · no date" },
 ];
 
-const horizonLabels = { current: "Current", next: "September 2026", wishlist: "Wishlist" };
+const horizonLabels = { current: "Available", next: "Gated / pilot", wishlist: "Wishlist" };
 const state = { horizon: "all", module: "all", search: "", view: "cards" };
 
 const grid = document.querySelector("#featureGrid");
@@ -76,10 +80,6 @@ const resultCount = document.querySelector("#resultCount");
 const emptyState = document.querySelector("#emptyState");
 const searchInput = document.querySelector("#searchInput");
 const dialog = document.querySelector("#featureDialog");
-
-function sourceUrl(path) {
-  return path === "README.md" ? `${repo}README.md` : `${repo}${path}`;
-}
 
 function renderModuleFilters() {
   const names = ["all", ...Object.keys(modules)];
@@ -133,8 +133,7 @@ function openDetails(index) {
   document.querySelector("#dialogModule").textContent = `${feature.module} · ${horizonLabels[feature.horizon]}`;
   document.querySelector("#dialogTitle").textContent = feature.title;
   document.querySelector("#dialogDescription").textContent = feature.description;
-  document.querySelector("#dialogMeta").innerHTML = `<span>${feature.evidence}</span><span>${feature.horizon === "current" ? "Available in canonical Laravel" : feature.horizon === "next" ? "Candidate, subject to gates" : "No committed date"}</span>`;
-  document.querySelector("#dialogSource").href = sourceUrl(feature.source);
+  document.querySelector("#dialogMeta").innerHTML = `<span>${feature.evidence}</span><span>${feature.horizon === "current" ? "Available in product" : feature.horizon === "next" ? "Subject to delivery gates" : "No committed date"}</span>`;
   dialog.showModal();
 }
 
